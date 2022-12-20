@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <title>Order Summary Component</title>
+    <style>
+      :root {
+        --pale-blue: hsl(225, 100%, 94%);
+        --bright-blue: hsl(245, 75%, 52%);
+        --very-pale-blue: hsl(228, 100%, 99%);
+        --desaturated-blue: hsl(223, 23%, 55%);
+        --dark-blue: hsl(223, 46%, 23%);
+        --btn-hover: hsla(245, 83%, 68%, 1);
+        --white: hsl(0, 0%, 100%);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      *,
+      *::after,
+      *::before {
+        box-sizing: inherit;
+      }
+      html {
+        font-size: 62.5%;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Red Hat Display", sans-serif;
+        height: 100vh;
+        background-color: var(--pale-blue);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      .card {
+        max-width: 32.7rem;
+        background-color: var(--white);
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: 0px 4rem 4rem -2rem rgba(13, 48, 189, 0.151826);
+      }
+
+      .btn {
+        display: block;
+        background-color: transparent;
+        border: 0;
+        font-family: inherit;
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        transition: all 250ms;
+        cursor: pointer;
+      }
+
+      .card-content {
+        margin: 2.4rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.4rem;
+      }
+
+      .card-header {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--dark-blue);
+        margin: 0.8rem 0 1.6rem 0;
+      }
+
+      .card-text {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--desaturated-blue);
+        line-height: 2.5rem;
+        margin: 0 0.8rem 0 0.8rem;
+      }
+
+      .card-plan {
+        background-color: var(--very-pale-blue);
+        border-radius: 1.1rem;
+        padding: 1.7rem 1.6rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+      .card--content {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .icon {
+        width: 4.8rem;
+        height: 4.8rem;
+      }
+
+      .card-text-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .card--text {
+        font-size: 1.4rem;
+        font-weight: 900;
+        color: var(--dark-blue);
+      }
+
+      .card-price {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--desaturated-blue);
+      }
+
+      .btn-inline {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--bright-blue);
+        text-decoration: underline;
+      }
+
+      .btn-main {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--white);
+        background-color: var(--bright-blue);
+        border-radius: 1.1rem;
+        box-shadow: 0px 2rem 2rem rgba(56, 42, 225, 0.190291);
+        padding: 1.5rem 0;
+        width: 100%;
+      }
+
+      .btn-secondary {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--desaturated-blue);
+        margin-bottom: 0.8rem;
+      }
+
+      .btn-main:hover {
+        background-color: var(--btn-hover);
+      }
+
+      .btn-inline:hover {
+        color: var(--btn-hover);
+      }
+
+      .btn-secondary:hover {
+        color: var(--dark-blue);
+      }
+
+      @media only screen and (min-width: 90em) {
+        .card {
+          max-width: 45rem;
+        }
+
+        .card-content {
+          margin: 4.8rem;
+        }
+
+        .card-header {
+          font-size: 2.8rem;
+        }
+
+        card-text {
+          font-size: 1.6rem;
+          margin-bottom: -0.4rem;
+        }
+
+        .card-plan {
+          margin-bottom: 0.8rem;
+        }
+
+        .card-text-box {
+          gap: 0.6rem;
+        }
+
+        .card--text,
+        .card-price {
+          font-size: 1.6rem;
+        }
+
+        .btn-inline {
+          font-size: 1.4rem;
+        }
+
+        .btn-main {
+          margin-bottom: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-logo">
+        <img
+          src="./illustration-hero.svg"
+          alt="girl listening to music"
+          class="logo"
+        />
+      </div>
+
+      <div class="card-content">
+        <div class="card-textbox">
+          <h1 class="card-header">Order Summary</h1>
+          <p class="card-text">
+            You can now listen to millions of songs, audiobooks, and podcasts on
+            any device anywhere you like!
+          </p>
+        </div>
+
+        <div class="card-plan">
+          <div class="card--content">
+            <img src="./icon-music.svg" alt="music icon" class="icon" />
+            <div class="card-text-box">
+              <p class="card--text">Annual Plan</p>
+              <p class="card-price">$59.99/year</p>
+            </div>
+          </div>
+          <button class="btn btn-inline">Change</button>
+        </div>
+
+        <button class="btn btn-main">Proceed to Payment</button>
+
+        <button class="btn btn-secondary">Cancel order</button>
+      </div>
+    </div>
+  </body>
+</html>
